@@ -3,12 +3,16 @@ package org.example.model;
 import java.util.Objects;
 
 public class User {
-    private final String login;
+    private String login;
     private String password;
 
     public User(String login, String password) {
         this.login = login;
         this.password = password;
+    }
+
+    public User(String login) {
+        this.login = login;
     }
 
     public String getLogin() {

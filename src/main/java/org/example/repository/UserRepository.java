@@ -9,7 +9,7 @@ public class UserRepository {
     private final List<User> users = new ArrayList<>();
 
     public Collection<User> getAllUsers() {
-        return Collections.unmodifiableCollection(users);
+        return users;
     }
 
     public Optional<User> findUserByLogin(String login) {
@@ -23,7 +23,7 @@ public class UserRepository {
 
     public Optional<User> findUserByLoginAndPassword(String login, String password) {
         for (User user : users) {
-            if (user.getLogin().equals(login)&&user.getPassword().equals(password)) {
+            if (user.getLogin().equals(login)||user.getPassword().equals(password)) {
                 return Optional.of(user);
             }
         }
