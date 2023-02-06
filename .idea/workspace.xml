@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9afee1b8-56e6-496a-b89f-2b27c5948438" name="Changes" comment="1">
+    <list default="true" id="9afee1b8-56e6-496a-b89f-2b27c5948438" name="Changes" comment="2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,11 +58,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.UserServiceTest.whenInvalidUserIsPassedThenServiceThrowsException">
-    <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mockito" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserRepositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -80,11 +78,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.whenGetNonLoginUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest.whenExistingUserIsPassedThenServiceThrowsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mockito" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
-      <option name="METHOD_NAME" value="whenGetNonLoginUser" />
+      <option name="METHOD_NAME" value="whenExistingUserIsPassedThenServiceThrowsException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -100,11 +98,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.whenRepositoryReturnsNullThenSomethingHappened" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest.whenNetworkExceptionIsRaisedThenServiceReturnsZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mockito" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
-      <option name="METHOD_NAME" value="whenRepositoryReturnsNullThenSomethingHappened" />
+      <option name="METHOD_NAME" value="whenNetworkExceptionIsRaisedThenServiceReturnsZero" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,11 +110,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.whenNetworkExceptionIsRaisedThenServiceReturnsZero" />
+        <item itemvalue="JUnit.UserServiceTest.whenExistingUserIsPassedThenServiceThrowsException" />
         <item itemvalue="JUnit.UserServiceTest.whenInvalidUserIsPassedThenServiceThrowsException" />
         <item itemvalue="JUnit.UserServiceTest.whenCorrectUserIsAddedThenAddUserIsCalledFromRepository" />
-        <item itemvalue="JUnit.UserServiceTest.whenGetNonLoginUser" />
-        <item itemvalue="JUnit.UserServiceTest.whenRepositoryReturnsNullThenSomethingHappened" />
-        <item itemvalue="JUnit.UserRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +129,7 @@
       <workItem from="1675411320405" duration="16640000" />
       <workItem from="1675498083976" duration="2322000" />
       <workItem from="1675586489579" duration="30475000" />
-      <workItem from="1675674976122" duration="6730000" />
+      <workItem from="1675674976122" duration="8496000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1675499569649</created>
@@ -147,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675624359990</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2">
+      <created>1675684207275</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675684207275</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +160,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -166,5 +172,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Mockito$UserRepositoryTest.ic" NAME="UserRepositoryTest Coverage Results" MODIFIED="1675678726557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Mockito$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1675685405426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

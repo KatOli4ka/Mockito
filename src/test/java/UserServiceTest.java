@@ -1,3 +1,4 @@
+import org.example.exception.UserNonUniqueException;
 import org.example.model.User;
 import org.example.repository.UserRepository;
 import org.example.service.UserService;
@@ -23,20 +24,11 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
-    User user1 = new User("test1", "qwerty1");
-    User user2 = new User("test2", "qwerty2");
     @Mock
     private UserRepository userRepository;
     @InjectMocks
     UserService userService;
 
-
-    //не работает как надо
-//    @Test
-//    void whenGetNonLoginUser() {
-//        when(userRepository.getAllUsers()).thenReturn(List.of());
-//        assertThat(userService.getAllLogins()).isEqualTo(0);
-//    }
     @Test
     void whenRepositoryReturnsNullThenSomethingHappened() {
         when(userRepository.getAllUsers()).thenReturn(null);
@@ -57,6 +49,18 @@ public class UserServiceTest {
                 .hasMessage("Пользователь должен быть определен!");
         verify(userRepository, new NoInteractions()).getAllUsers();
         verify(userRepository, new NoInteractions()).addUser(any());
+    }
+    @Test
+    void whenExistingUserIsPassedThenServiceThrowsException() {
+        when(userRepository.getAllUsers()).thenReturn(List.of(new User("test2", "qwerty2")));
+        assertThatThrownBy(() -> userService.addUser("test2", "qwerty2"))
+                .isInstanceOf(UserNonUniqueException.class)
+                .hasMessage("Пользователь не уникален!");
+    }
+    @Test
+    void whenNetworkExceptionIsRaisedThenServiceReturnsZero() {
+        when(userRepository.getAllUsers()).thenThrow(new RuntimeException());
+        assertThat(userService.getAllLogins()).isEqualTo(0);
     }
 
 
