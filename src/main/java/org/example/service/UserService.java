@@ -4,7 +4,8 @@ import org.example.exception.UserNonUniqueException;
 import org.example.model.User;
 import org.example.repository.UserRepository;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.stream.Collectors;
 
 
@@ -15,13 +16,23 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<String> getAllLogins() {
-        return this.userRepository
-                .getAllUsers()
-                .stream()
-                .map(User::getLogin)
-                .collect(Collectors.toList());
+    public Object getAllLogins() {
+        try {
+            Collection<User> users = this.userRepository
+                    .getAllUsers();
+            if (users == null) {
+                return 0;
+            }
+            return users
+                    .stream()
+                    .map(User::getLogin)
+                    .collect(Collectors.toList());
+
+        } catch (RuntimeException e) {
+            return 0;
+        }
     }
+
 
     public void addUser(String login, String password) {
         User user = new User(login, password);

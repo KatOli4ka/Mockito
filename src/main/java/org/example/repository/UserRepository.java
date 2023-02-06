@@ -29,8 +29,9 @@ public class UserRepository {
         }
         return Optional.empty();
     }
-    public void addUser(User user) {
+    public User addUser(User user) {
         this.users.add(user);
+        return user;
     }
 
 }
